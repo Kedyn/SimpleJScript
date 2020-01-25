@@ -10,7 +10,7 @@ Load `SimpleJScript.mRC` located in the root folder onto mIRC.
 
 ### Identifier \$jsCreate
 
-```mirc
+```mirc-script
 $jsCreate(name)
 ```
 
@@ -20,7 +20,7 @@ Returns 1 if success, 0 otherwise.
 
 ### Identifer \$jsAddCode
 
-```mirc
+```mirc-script
 $jsAddCode(name,code)
 ```
 
@@ -30,7 +30,7 @@ Return 1 if success, 0 otherwise.
 
 ### Identifier \$jsEvaluate
 
-```mirc
+```mirc-script
 $jsEvaluate(name,code)
 ```
 
@@ -40,7 +40,7 @@ Returns the result.
 
 ### Identifier \$jsExecute
 
-```mirc
+```mirc-script
 $jsExecute(name,code)
 ```
 
@@ -50,7 +50,7 @@ Return 1 if success, 0 otherwise.
 
 ### Identifer \$jsDestroy
 
-```mirc
+```mirc-script
 $jsDestroy(name)
 ```
 
