@@ -2,12 +2,12 @@
 *
 * Current version of the project.
 *
-* @const $SIMPLE_JSCRIPT
+* @const $SIMPLE_JSCRIPT_VERSION
 *
 * @global
 *
 */
-alias -l SIMPLE_JSCRIPT return 1.0.0
+alias SIMPLE_JSCRIPT_VERSION return 1.0.0
 
 /**
 *
