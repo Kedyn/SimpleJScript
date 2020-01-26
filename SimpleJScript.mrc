@@ -7,7 +7,7 @@
 * @global
 *
 */
-alias SIMPLE_JSCRIPT_VERSION return 1.0.0
+alias SIMPLE_JSCRIPT_VERSION !return 1.0.0
 
 /**
 *

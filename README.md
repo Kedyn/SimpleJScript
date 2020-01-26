@@ -4,7 +4,7 @@ Allows execution of JScript using MSScriptControl.ScriptControl com objects.
 
 ## Installation
 
-Load `SimpleJScript.mRC` located in the root folder onto mIRC.
+Load `SimpleJScript.mrc` located in the root folder onto mIRC.
 
 ## Usage
 
