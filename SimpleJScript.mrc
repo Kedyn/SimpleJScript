@@ -30,6 +30,8 @@ alias jsCreate {
       if (!$~com(%name)) {
         .!comopen %name MSScriptControl.ScriptControl
 
+        if ($~comerr) .!comopen %name Tablacus.ScriptControl
+
         if (!$~comerr) !return $~com(%name,language,4,bstr,jscript)
       }
     }
@@ -62,8 +64,10 @@ alias jsAddCode {
     if ($~0 >= 2) {
       !set -l %name $~+(js,$~1)
 
-      if (!$~com(%name)) !return $~com(%name,addcode,1,bstr,$~2-)
+      if ($~com(%name)) !return $~com(%name,addcode,1,bstr,$~2-)
     }
+    
+    echo -a ADDCODE
 
     !return 0
   }
@@ -93,7 +97,7 @@ alias jsEvaluate {
     if ($~0 >= 2) {
       !set -l %name $~+(js,$~1)
 
-      if (!$~com(%name)) && ($~com(%name,eval,1,bstr,$~2-)) !return $~com(%name).result
+      if ($~com(%name)) && ($~com(%name,eval,1,bstr,$~2-)) !return $~com(%name).result
     }
 
     !return 0
@@ -124,7 +128,7 @@ alias jsExecute {
     if ($~0 >= 2) {
       !set -l %name $~+(js,$~1)
 
-      if (!$~com(%name)) && ($~com(%name,executestatement,1,bstr,$~2-)) !return 1
+      if ($~com(%name)) && ($~com(%name,executestatement,1,bstr,$~2-)) !return 1
     }
 
     !return 0
@@ -153,7 +157,7 @@ alias jsDestroy {
   if ($~isid) {
     !set -l %name $~+(js,$~1)
 
-      if (!$~com(%name)) {
+      if ($~com(%name)) {
         .!comclose %name
 
         !return 1
