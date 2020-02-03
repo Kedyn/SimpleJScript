@@ -1,10 +1,14 @@
 # SimpleJScripts
 
-Allows execution of JScript using MSScriptControl.ScriptControl com objects.
+Allows execution of JScript using MSScriptControl.ScriptControl/Tablacus.ScriptControl com objects.
 
 ## Installation
 
-Load `SimpleJScript.mrc` located in the root folder onto mIRC.
+Load `SimpleJScript.mrc` located in the root folder onto mIRC/AdiIRC.
+
+**Notes:**
+
+_If you are utilizing AdiIRC 64bit, you can download the [tsc64_1101.cab](https://github.com/tablacus/TablacusScriptControl/releases/tag/1.1.0.1) asset, extract, and run setup.exe. By doing so the script will fallback into utilizing Tablacus.ScriptControl._
 
 ## Usage
 
@@ -57,6 +61,10 @@ $jsDestroy(name)
 Removes everything from a JScript script and closes it.
 
 Return 1 if success, 0 otherwise.
+
+## Acknowledgements
+
+- [SReject](https://github.com/SReject) - *Adding suport for AdiIRC.*
 
 ## License
 
