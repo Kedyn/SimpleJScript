@@ -7,7 +7,7 @@
 * @global
 *
 */
-alias SIMPLE_JSCRIPT_VERSION !return 1.0.0
+alias SIMPLE_JSCRIPT_VERSION return 1.0.0
 
 /**
 *
@@ -23,25 +23,25 @@ alias SIMPLE_JSCRIPT_VERSION !return 1.0.0
 *
 */
 alias jsCreate {
-  if ($~isid) {
-    if ($~0 >= 1) {
-      !set -l %name $~+(js,$~1)
+  if ($isid) {
+    if ($0 >= 1) {
+      set -l %name $+(js,$1)
 
-      if (!$~com(%name)) {
-        .!comopen %name MSScriptControl.ScriptControl
+      if (!$com(%name)) {
+        .comopen %name MSScriptControl.ScriptControl
 
-        if ($~comerr) .!comopen %name Tablacus.ScriptControl
+        if ($comerr) .comopen %name Tablacus.ScriptControl
 
-        if (!$~comerr) !return $~com(%name,language,4,bstr,jscript)
+        if (!$comerr) return $com(%name,language,4,bstr,jscript)
       }
     }
 
-    !return 0
+    return 0
   }
   else {
-    !echo -ces info * jsCreate: is not a command
+    echo -ces info * jsCreate: is not a command
 
-    !halt
+    halt
   }
 }
 
@@ -60,21 +60,21 @@ alias jsCreate {
 *
 */
 alias jsAddCode {
-  if ($~isid) {
-    if ($~0 >= 2) {
-      !set -l %name $~+(js,$~1)
+  if ($isid) {
+    if ($0 >= 2) {
+      set -l %name $+(js,$1)
 
-      if ($~com(%name)) !return $~com(%name,addcode,1,bstr,$~2-)
+      if ($com(%name)) return $com(%name,addcode,1,bstr,$2-)
     }
     
     echo -a ADDCODE
 
-    !return 0
+    return 0
   }
   else {
-    !echo -ces info * jsAddCode: is not a command
+    echo -ces info * jsAddCode: is not a command
 
-    !halt
+    halt
   }
 }
 
@@ -93,19 +93,19 @@ alias jsAddCode {
 *
 */
 alias jsEvaluate {
-  if ($~isid) {
-    if ($~0 >= 2) {
-      !set -l %name $~+(js,$~1)
+  if ($isid) {
+    if ($0 >= 2) {
+      set -l %name $+(js,$1)
 
-      if ($~com(%name)) && ($~com(%name,eval,1,bstr,$~2-)) !return $~com(%name).result
+      if ($com(%name)) && ($com(%name,eval,1,bstr,$2-)) return $com(%name).result
     }
 
-    !return 0
+    return 0
   }
   else {
-    !echo -ces info * jsEvaluate: is not a command
+    echo -ces info * jsEvaluate: is not a command
 
-    !halt
+    halt
   }
 }
 
@@ -124,19 +124,19 @@ alias jsEvaluate {
 *
 */
 alias jsExecute {
-  if ($~isid) {
-    if ($~0 >= 2) {
-      !set -l %name $~+(js,$~1)
+  if ($isid) {
+    if ($0 >= 2) {
+      set -l %name $+(js,$1)
 
-      if ($~com(%name)) && ($~com(%name,executestatement,1,bstr,$~2-)) !return 1
+      if ($com(%name)) && ($com(%name,executestatement,1,bstr,$2-)) return 1
     }
 
-    !return 0
+    return 0
   }
   else {
-    !echo -ces info * jsExecute: is not a command
+    echo -ces info * jsExecute: is not a command
 
-    !halt
+    halt
   }
 }
 
@@ -154,20 +154,20 @@ alias jsExecute {
 *
 */
 alias jsDestroy {
-  if ($~isid) {
-    !set -l %name $~+(js,$~1)
+  if ($isid) {
+    set -l %name $+(js,$1)
 
-      if ($~com(%name)) {
-        .!comclose %name
+      if ($com(%name)) {
+        .comclose %name
 
-        !return 1
+        return 1
       }
 
-    !return 0
+    return 0
   }
   else {
-    !echo -ces info * jsDestroy: is not a command
+    echo -ces info * jsDestroy: is not a command
 
-    !halt
+    halt
   }
 }
